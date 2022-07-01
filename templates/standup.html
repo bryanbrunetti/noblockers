@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Today's Standup Order</title>
+</head>
+<body>
+
+<h1>Hello!<br/>Here is the standup sequence for {{today}}</h1>
+<a href="/update">update this list</a>
+<div style="font-size: 44px">
+    <ul>
+        {% for p in participants: %}
+        <li>{{p.decode()}}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>
+        Today's Totally Random Standup Order
+    </title>
+</head>
+<body>
+<a href="/">back</a>
+    <ul>
+        {% for p in participants %}
+        <li>{{p.decode()}} ( <a href="/remove?name={{p.decode()}}">remove</a> )</li>
+        {% endfor %}
+    </ul>
+<form action="/add" method="post">
+    <input type="text" name="participant"> <input type="submit" value="add new participant" />
+</form>
+</body>
+</html>
