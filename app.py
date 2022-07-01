@@ -5,7 +5,7 @@ import datetime
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
-redis = r.StrictRedis(host=os.environ.get("REDIS_URL", "localhost"), port=6379, db=0, charset="utf-8")
+redis = r.StrictRedis.from_url(os.environ.get("REDIS_URL", "redis://localhost"))
 
 
 def get_participants():
